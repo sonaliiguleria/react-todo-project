@@ -1,6 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { HashRouter as Router, Routes, Route} from "react-router-dom"
+//import { HashRouter as Router, Routes, Route} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 import TodoContainer from "./functionBased/components/TodoContainer"
 import "./functionBased/app.css"
@@ -10,7 +11,7 @@ import Navbar from "./functionBased/components/Navbar"
 
 ReactDOM.render(
  <React.StrictMode>
-     <Router>
+     <Router basename={process.env.PUBLIC_URL}>
          <Navbar/>
          <Routes>
                 <Route exact path="/" element={<TodoContainer/>}></Route>
